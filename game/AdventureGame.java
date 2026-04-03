@@ -1,3 +1,4 @@
+package game;
 import java.util.Scanner;
 
 public class AdventureGame {
@@ -13,6 +14,34 @@ public class AdventureGame {
         scanner = new Scanner(System.in);
     }
 
+    public Player getPlayer() {
+    	return player;
+    }
+    
+    public Scene getCurrentScene() {
+    	return currentScene;
+    }
+    
+    public void moveToScene(int nextSceneID) {
+    	currentScene = scenes.findSceneById(nextSceneID);    
+    }
+    
+    public SceneLinkedList getScenes() {
+    	return scenes;
+    }
+    
+    public void pickupCurrentItem() {
+    	if (currentScene.getItem() != null) {
+    		player.addItem(currentScene.getItem());
+    		currentScene.removeItem();
+    	}
+    }
+    
+    public boolean canWinGame() {
+    	//makes sure player has both items, and if they do it returns true because they can win the game.
+    	return player.hasItem("Keycard") && player.hasItem("Code Note");
+    }
+    
     public void play() {
         System.out.println("Welcome to Escape Room Adventure!");
         System.out.println("Collect the correct items before reaching the exit.\n");
