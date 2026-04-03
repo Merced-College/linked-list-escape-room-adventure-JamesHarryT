@@ -85,9 +85,6 @@ public class GameGUI extends JFrame {
 		
 		Image scaledImg = img.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
 		ImageIcon scaledIcon = new ImageIcon(scaledImg);
-	
-		
-		image_lbl.setIcon(scaledIcon);
 		image_lbl.setBounds(22, 61, 300, 300);
 		contentPane.add(image_lbl);
 		
@@ -206,6 +203,8 @@ public class GameGUI extends JFrame {
 		ImageIcon icon = new ImageIcon(current_scene.getImagePath());
 		Image img = icon.getImage().getScaledInstance(300, 300, Image.SCALE_SMOOTH);
 		image_lbl.setIcon(new ImageIcon(img));
+		
+		System.out.println(current_scene.getImagePath());
 		
 		btn_choice_1.setText("<html>" + current_scene.getChoices().get(0).getText() + "</html>");
 		btn_choice_2.setText("<html>" + current_scene.getChoices().get(1).getText() + "</html>");
