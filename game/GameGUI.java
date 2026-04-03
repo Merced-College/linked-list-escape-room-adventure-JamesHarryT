@@ -18,6 +18,16 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 
+
+/*
+ * Name: Harrison Tinley
+ * Date: 4/3/2026
+ * Class for all the UI (buttons and labels) for the game.
+ */
+
+
+
+
 public class GameGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -203,8 +213,6 @@ public class GameGUI extends JFrame {
 		ImageIcon icon = new ImageIcon(current_scene.getImagePath());
 		Image img = icon.getImage().getScaledInstance(300, 300, Image.SCALE_SMOOTH);
 		image_lbl.setIcon(new ImageIcon(img));
-		
-		System.out.println(current_scene.getImagePath());
 		
 		btn_choice_1.setText("<html>" + current_scene.getChoices().get(0).getText() + "</html>");
 		btn_choice_2.setText("<html>" + current_scene.getChoices().get(1).getText() + "</html>");
